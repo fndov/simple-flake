@@ -57,7 +57,7 @@ Installs software to the shell (not the system) and is discarded when the shell 
 #### Important links:
 
 [How to setup NVIDIA](https://nixos.wiki/wiki/Nvidia) <br>
-Copy paste to compose.nix and add `config` to `{ settings, .. }:` => `{ settings, config, ... }:`
+Copy paste to configuration.nix and add `config` to `{ ... }:` => `{ config, ... }:`
 ```
   hardware.nvidia.open = false;
   hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.production;
