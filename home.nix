@@ -6,6 +6,7 @@
     # Packages that should be installed to the user profile.
     home.packages = [
       pkgs.htop
+      pkgs.git
       pkgs.cowsay
     ];
 

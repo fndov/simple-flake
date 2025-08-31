@@ -19,6 +19,10 @@ git clone https://github.com/fndov/simple-flake ~/.system && rm -rf ~/.system/.g
 cp /etc/nixos/configuration.nix ~/.system/configuration.nix
 cp /etc/nixos/hardware-configuration.nix ~/.system/hardware.nix
 ```
+Take out the import section for hardware-configuration.nix at the top (the flake does this for you now)
+```
+nano ~/.system/configuration.nix
+```
 Input your name
 ```
 nano ~/.system/home.nix
