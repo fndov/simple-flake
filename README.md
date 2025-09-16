@@ -15,22 +15,22 @@ Import flow
 ---
 Setup
 ```
-git clone https://github.com/fndov/simple-flake ~/.system && rm -rf ~/.system/.git
-cp /etc/nixos/configuration.nix ~/.system/configuration.nix
-cp /etc/nixos/hardware-configuration.nix ~/.system/hardware.nix
+git clone https://github.com/fndov/simple-flake ~/.flake && rm -rf ~/.flake/.git
+cp /etc/nixos/configuration.nix ~/.flake/configuration.nix
+cp /etc/nixos/hardware-configuration.nix ~/.flake/hardware.nix
 ```
 Take out the import section for hardware-configuration.nix at the top (the flake does this for you now)
 ```
-nano ~/.system/configuration.nix
+nano ~/.flake/configuration.nix
 ```
 Input your name
 ```
-nano ~/.system/home.nix
+nano ~/.flake/home.nix
 ```
 ---
 ### Commands
 ```
-sudo nixos-rebuild switch --flake ~/.system#home
+sudo nixos-rebuild switch --flake ~/.flake#home
 ```
 nixos-rebuild has a few options:
 * switch  : switches to the new configuration immediately
@@ -39,7 +39,7 @@ nixos-rebuild has a few options:
 * test    : switches to the new generation but does not save it to the boot menu
 
 ```
-sudo nixos-rebuild switch --flake ~/.system#home --rollback
+sudo nixos-rebuild switch --flake ~/.flake#home --rollback
 ```
 Rolls back to the previous generation.
 
@@ -49,7 +49,7 @@ sudo nix-collect-garbage
 Deletes all previous generations so you don't run out of space.
 
 ```
-sudo nix flake update --flake ~/.system#home
+sudo nix flake update --flake ~/.flake#home
 ```
 Update system.
 
